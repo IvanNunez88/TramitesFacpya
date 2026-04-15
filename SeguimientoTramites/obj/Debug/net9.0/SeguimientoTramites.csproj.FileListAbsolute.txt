@@ -86,3 +86,4 @@
 /Users/ivannunezfrayre/Desktop/MAC/FACPYA/Gpo81/BACK/SeguimientoTramites/bin/Debug/net9.0/FluentValidation.dll
 /Users/ivannunezfrayre/Desktop/MAC/FACPYA/Gpo81/BACK/SeguimientoTramites/bin/Debug/net9.0/FluentValidation.AspNetCore.dll
 /Users/ivannunezfrayre/Desktop/MAC/FACPYA/Gpo81/BACK/SeguimientoTramites/bin/Debug/net9.0/FluentValidation.DependencyInjectionExtensions.dll
+/Users/ivannunezfrayre/Desktop/MAC/FACPYA/Gpo81/BACK/SeguimientoTramites/obj/Debug/net9.0/SeguimientoTramites.sourcelink.json

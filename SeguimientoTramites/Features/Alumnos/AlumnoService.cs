@@ -36,11 +36,16 @@ public class AlumnoService
     public async Task<ApiResponse<Alumno>> ObtenerPorMatricula(int matricula)
     {
         using var connection = _db.CreateConnection();
-        var sql = @"SELECT a.Matricula, a.Nombre, a.Correo, a.IdCarrera, a.IsActivo,
+        var sql = @"SELECT a.Matricula, 
+                           a.Nombre, 
+                           a.Correo, 
+                           a.IdCarrera, 
+                           a.IsActivo,
                            c.Descrip AS CarreraDescrip
                     FROM ALUMNO a
                     INNER JOIN CARRERA c ON a.IdCarrera = c.IdCarrera
                     WHERE a.Matricula = @Matricula";
+
         var alumno = await connection.QueryFirstOrDefaultAsync<Alumno>(sql, new { Matricula = matricula });
 
         if (alumno == null)

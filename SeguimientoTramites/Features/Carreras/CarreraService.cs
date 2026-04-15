@@ -44,6 +44,7 @@ public class CarreraService
 
     public async Task<ApiResponse<Carrera>> Crear(CrearCarreraDTO dto)
     {
+        dto.Descrip = StringNormalizer.Normalize(dto.Descrip);
         var validacion = await _crearValidator.ValidateAsync(dto);
         if (!validacion.IsValid)
             return ApiResponse<Carrera>.Error(validacion.Errors.First().ErrorMessage);
@@ -59,7 +60,10 @@ public class CarreraService
 
     public async Task<ApiResponse<string>> Actualizar(int id, ActualizarCarreraDTO dto)
     {
-        var validacion = await _actualizarValidator.ValidateAsync(dto);
+        dto.Descrip = StringNormalizer.Normalize(dto.Descrip);
+        var context = new ValidationContext<ActualizarCarreraDTO>(dto);
+        context.RootContextData["Id"] = id;
+        var validacion = await _actualizarValidator.ValidateAsync(context);
         if (!validacion.IsValid)
             return ApiResponse<string>.Error(validacion.Errors.First().ErrorMessage);
 

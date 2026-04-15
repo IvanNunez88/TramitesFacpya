@@ -14,6 +14,7 @@ builder.Services.AddSingleton<SeguimientoTramites.Data.DbContext>();
 // Registrar Services
 builder.Services.AddScoped<SeguimientoTramites.Features.Carreras.CarreraService>();
 builder.Services.AddScoped<SeguimientoTramites.Features.Alumnos.AlumnoService>();
+builder.Services.AddScoped<SeguimientoTramites.Features.Tramites.TramiteService>();
 
 // CORS - para que el FRONT pueda conectarse
 builder.Services.AddCors(options =>
